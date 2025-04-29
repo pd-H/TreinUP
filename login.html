@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="login.js"></script>
+  <link rel="stylesheet" href="login.css">
+  <title>Login</title>
+</head>
+<body>
+
+<div class="container">
+  <div id="loginForm">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Usuário" required>
+    <input type="password" id="loginPassword" placeholder="Senha" required>
+    <button onclick="login()">Entrar</button>
+    <div class="toggle" onclick="toggleForm('register')">Novo Usuário</div>
+  </div>
+
+  <div id="registerForm" style="display: none;">
+    <h2>Cadastro</h2>
+    <input type="text" id="fullName" placeholder="Nome Completo" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="newUsername" placeholder="Usuário" required>
+    <input type="password" id="newPassword" placeholder="Senha" required>
+    <input type="password" id="confirmPassword" placeholder="Confirmar Senha" required>
+    <button onclick="register()">Cadastrar</button>
+    <div class="toggle" onclick="toggleForm('login')">Já tenho conta</div>
+  </div>
+</div>
+
+</body>
+</html>
