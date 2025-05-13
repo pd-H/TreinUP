@@ -16,10 +16,21 @@ function toggleForm(form) {
 
       // Redireciona para a página principal
       window.location.href = "index.html";
-    
+  
     } else {
       alert('Usuário ou senha inválidos.');
     }
+
+    if (password.length < 6) {
+    alert('A senha deve ter pelo menos 6 caracteres.');
+    return;
+  }
+  
+  // Verifica formato de email básico
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('Email inválido');
+    return;
+  }
   }
 
   function register() {
