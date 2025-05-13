@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background: #f0f2f5;
@@ -40,4 +41,48 @@ body {
     color: #E23437;
   }
 
+=======
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 300px;
+  }
+  h2 {
+    text-align: center;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #B83333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .toggle {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #E23437;
+  }
+
+>>>>>>> 47d445a57307e0c1f4ead0e9c09d8fa5b47b7825
   .toggle:hover{color: #771c1c}

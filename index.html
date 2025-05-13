@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -139,4 +140,147 @@
 </script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TreinUP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo" class="logo"/>
+    <nav>
+      <ul>
+        <li><a href="montetreino.html" class="otherbtn">Monte seu Treino</a></li>
+        <li><a href="#" class="otherbtn">Calcule</a></li>
+        <li id="nav-auth-section">
+            <a href="login.html" class="btn">Login / Cadastro</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="faixa-decorativa"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Com o <strong>TreinUP</strong> você irá maximizar o seu treino e atingir a melhor performance física!</h2>
+      <p>Nosso objetivo é ajudar você a melhorar sua forma física, contribuindo para que alcance suas metas de saúde e bem-estar.</p>
+    </div>
+    <div class="hero-image">
+      <img src="low-angle-view-unrecognizable-muscular-build-man-preparing-lifting-barbell-health-club.jpg" alt="Exercícios físicos" />
+    </div>
+  </section>
+
+  <!-- OPTIONS -->
+  <section class="options">
+    <h3>Escolha o melhor para você</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="homem-de-tiro-completo-sentado-no-tapete-de-ioga_23-2149249473.jpg" alt="Treino em casa" id="imagem" />
+        <a href="#" target="_blank">Treino personalizado em casa</a>
+      </div>
+      <div class="card">
+        <img src="mulher-senior-exercitando-ao-ar-livre-no-parque_23-2150296648.avif" alt="Treino ao ar livre" />
+        <a href="#" target="_blank">Treino personalizado ao ar livre</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h3>Quem somos?</h3>
+    <p>Nós somos estudantes de Sistemas de Informação e fizemos este site com o intuito de ajudar você a melhorar sua forma e capaciadade física. Para que você leve uma vida mais ativa e saudável, com exercícios que condizem com a sua necessidade atual e com o seu bem estar.</p>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section class="feedback">
+    <h3>Envie-nos o seu feedback</h3>
+    <div class="feedback-box">
+      <p><strong>Avalie-nos</strong></p>
+      <a href="#" target="_blank"><i>Link para a página de feedback</i></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="Logo TreinUP">
+    <p> &copy; 2025 TreinUP - Todos os direitos reservados</p>
+</footer>
+
+<script>
+    // Executa quando o DOM estiver completamente carregado
+    document.addEventListener('DOMContentLoaded', function() {
+        const loggedInUsername = localStorage.getItem("usuarioLogado");
+        const navAuthSection = document.getElementById('nav-auth-section');
+
+        if (loggedInUsername) {
+            // Usuário está logado
+            const userDataString = localStorage.getItem(loggedInUsername);
+            if (userDataString) {
+                const userData = JSON.parse(userDataString);
+
+                // Limpa o conteúdo atual do LI (o botão de Login/Cadastro)
+                navAuthSection.innerHTML = '';
+
+                // Adiciona a saudação
+                const greeting = document.createElement('span');
+                greeting.textContent = `Olá, ${userData.name}!`;
+                navAuthSection.appendChild(greeting);
+
+                // Adiciona o link "Ver Dados"
+                const viewDetailsLink = document.createElement('a');
+                viewDetailsLink.href = '#'; // Não navega para lugar nenhum
+                viewDetailsLink.textContent = 'Veja seus Dados';
+                viewDetailsLink.classList.add('user-action-link'); // Classe para estilização
+                viewDetailsLink.onclick = function(event) {
+                    event.preventDefault(); // Previne a navegação padrão do link
+                    // Exibe os dados (COM AVISO DE SEGURANÇA)
+                    alert(
+                        `Suas Informações:\n\n` +
+                        `Nome: ${userData.name}\n` +
+                        `Email: ${userData.email}\n` +
+                        `Usuário: ${loggedInUsername}\n` +
+                        `Senha: ${userData.password} (Atenção: Exibir senhas é inseguro!)`
+                    );
+                };
+                navAuthSection.appendChild(viewDetailsLink);
+
+                // Adiciona o botão "Sair"
+                const logoutButton = document.createElement('button');
+                logoutButton.textContent = 'Sair';
+                logoutButton.classList.add('btn-sair'); // Classe para estilização
+                logoutButton.onclick = function() {
+                    logout();
+                };
+                navAuthSection.appendChild(logoutButton);
+
+            } else {
+                // Caso raro: usuário logado existe, mas dados não encontrados
+                console.error("Dados do usuário logado não encontrados no localStorage.");
+                // Mantém o botão de login original ou exibe erro
+                navAuthSection.innerHTML = '<a href="login.html" class="btn">Login / Cadastro (Erro)</a>';
+                localStorage.removeItem("usuarioLogado"); // Limpa o login inválido
+            }
+        }
+        // Se não houver loggedInUsername, o HTML original do LI permanece (botão Login/Cadastro)
+    });
+
+    function logout() {
+        // Remove o indicador de usuário logado
+        localStorage.removeItem("usuarioLogado");
+        alert("Você saiu com sucesso.");
+        // Recarrega a página para atualizar a navbar
+        window.location.reload();
+    }
+</script>
+
+</body>
+>>>>>>> 47d445a57307e0c1f4ead0e9c09d8fa5b47b7825
 </html>
