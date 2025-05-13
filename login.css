@@ -38,5 +38,6 @@ body {
     text-align: center;
     cursor: pointer;
     color: #E23437;
-    
   }
+
+  .toggle:hover{color: #771c1c}
