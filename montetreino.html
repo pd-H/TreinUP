@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TreinUP</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>TreinUP - Monte seu Treino</title>
+  <link rel="stylesheet" href="montetreino.css" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo" class="logo"/>
+    <div><a href="index.html"><img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo" class="logo"/></a></div>
     <nav>
       <ul>
         <li><a href="montetreino.html" class="otherbtn">Monte seu Treino</a></li>
@@ -21,57 +21,38 @@
       </ul>
     </nav>
   </header>
-
+  
   <div class="faixa-decorativa"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Com o <strong>TreinUP</strong> você irá maximizar o seu treino e atingir a melhor performance física!</h2>
-      <p>Nosso objetivo é ajudar você a melhorar sua forma física, contribuindo para que alcance suas metas de saúde e bem-estar.</p>
+    <!-- CONTEÚDO PRINCIPAL -->
+  <main class="treino-container">
+    <h1>Aqui você encontrará um treino para você</h1>
+    <p class="subtitulo">mas antes preencha este formulário para nos te ajudarmos:</p>
+    
+    <div class="link-formulario">
+      <a href="formulario.html" id="link-form">Link para o formulário</a>
     </div>
-    <div class="hero-image">
-      <img src="low-angle-view-unrecognizable-muscular-build-man-preparing-lifting-barbell-health-club.jpg" alt="Exercícios físicos" />
+    
+    <div class="imagem-treino">
+      <img src="oms-sobe-para-300-minutos-recomendacao-de-atividade-fisica-semanal.jpg" alt="Pessoas se exercitando" />
     </div>
-  </section>
-
-  <!-- OPTIONS -->
-  <section class="options">
-    <h3>Escolha o melhor para você</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="homem-de-tiro-completo-sentado-no-tapete-de-ioga_23-2149249473.jpg" alt="Treino em casa" id="imagem" />
-        <a href="#" target="_blank">Treino personalizado em casa</a>
-      </div>
-      <div class="card">
-        <img src="mulher-senior-exercitando-ao-ar-livre-no-parque_23-2150296648.avif" alt="Treino ao ar livre" />
-        <a href="#" target="_blank">Treino personalizado ao ar livre</a>
-      </div>
+    
+    <div class="instrucao">
+      <p>A partir do formulário preenchido<br>clique para gerar seu treino aqui <span class="seta">→</span></p>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <h3>Quem somos?</h3>
-    <p>Nós somos estudantes de Sistemas de Informação e fizemos este site com o intuito de ajudar você a melhorar sua forma e capaciadade física. Para que você leve uma vida mais ativa e saudável, com exercícios que condizem com a sua necessidade atual e com o seu bem estar.</p>
-  </section>
-
-  <!-- FEEDBACK -->
-  <section class="feedback">
-    <h3>Envie-nos o seu feedback</h3>
-    <div class="feedback-box">
-      <p><strong>Avalie-nos</strong></p>
-      <a href="#" target="_blank"><i>Link para a página de feedback</i></a>
+    
+    <div class="link-gerar">
+      <a href="#" id="gerar-treino" class="disabled">Link para gerar o treino baseado nas informações</a>
     </div>
-  </section>
+  </main>
 
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer>
     <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="Logo TreinUP">
     <p> &copy; 2025 TreinUP - Todos os direitos reservados</p>
 </footer>
 
-<script>
+    <script>
     // Executa quando o DOM estiver completamente carregado
     document.addEventListener('DOMContentLoaded', function() {
         const loggedInUsername = localStorage.getItem("usuarioLogado");
@@ -135,8 +116,26 @@
         alert("Você saiu com sucesso.");
         // Recarrega a página para atualizar a navbar
         window.location.reload();
+
+    // novo // Verificar se há dados de formulário salvos
+    const gerarTreinoBtn = document.getElementById('gerarTreino');
+    if (gerarTreinoBtn) {
+        gerarTreinoBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Verificar se o formulário foi preenchido
+            const formData = localStorage.getItem('formTreinoData');
+            
+            if (!formData) {
+                alert('Por favor, preencha o formulário primeiro antes de gerar o treino.');
+                window.location.href = 'formulario.html';
+                return;
+            }
+            
+            // Redirecionar para a página de treino gerado
+            window.location.href = '#';}); 
+        } // até aqui -  novo
     }
 </script>
-
-</body>
+  </body>
 </html>
